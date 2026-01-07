@@ -1,0 +1,72 @@
+{
+  "name": "frontend-library",
+  "version": "0.1.0",
+  "description": "Design tokens, AI prompts, and component patterns for frontend development",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens": {
+      "import": "./dist/tokens/design-tokens.mjs",
+      "require": "./dist/tokens/design-tokens.js",
+      "types": "./dist/tokens/design-tokens.d.ts"
+    },
+    "./prompts": {
+      "import": "./dist/prompts/base-prompt.mjs",
+      "require": "./dist/prompts/base-prompt.js",
+      "types": "./dist/prompts/base-prompt.d.ts"
+    },
+    "./patterns": {
+      "import": "./dist/components/patterns.mjs",
+      "require": "./dist/components/patterns.js",
+      "types": "./dist/components/patterns.d.ts"
+    },
+    "./tailwind": {
+      "import": "./dist/config/tailwind.config.mjs",
+      "require": "./dist/config/tailwind.config.js",
+      "types": "./dist/config/tailwind.config.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "design-tokens",
+    "tailwindcss",
+    "components",
+    "ui",
+    "design-system",
+    "ai-prompts",
+    "frontend",
+    "react",
+    "nextjs",
+    "shadcn"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}
