@@ -123,6 +123,24 @@ export {
 } from './config/tailwind.config';
 
 // ============================================================================
+// TEMPLATES
+// ============================================================================
+
+export {
+  // Types
+  type LandingPageTemplate,
+  type TemplateSection,
+
+  // Template collection
+  templates,
+
+  // Template helpers
+  getTemplatesByStyle,
+  getTemplatesBySource,
+  getSectionExamples,
+} from './templates';
+
+// ============================================================================
 // CONVENIENCE EXPORTS
 // ============================================================================
 

@@ -488,6 +488,850 @@ export const web3: DesignTokens = {
 };
 
 // ============================================================================
+// GLASSMORPHISM STYLE
+// ============================================================================
+
+export const glassmorphism: DesignTokens = {
+  name: 'Glassmorphism',
+  description: 'Frosted glass aesthetic with translucent backgrounds, blur effects, and subtle borders. Creates depth through layered transparent panels with soft shadows.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#7C3AED',
+    secondary: '#06B6D4',
+    background: '#0F172A',
+    foreground: '#F8FAFC',
+    muted: '#94A3B8',
+    border: 'rgba(255, 255, 255, 0.1)',
+    card: 'rgba(255, 255, 255, 0.1)',
+    glass: 'rgba(255, 255, 255, 0.05)',
+  },
+  typography: {
+    fontFamily: {
+      display: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['8px', '12px', '16px', '20px', '24px', '32px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px',
+    'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px',
+  ],
+  effects: {
+    backdrop: 'blur(16px)',
+    blur: 'blur(8px)',
+  },
+};
+
+// ============================================================================
+// SKETCH / HAND-DRAWN STYLE
+// ============================================================================
+
+export const sketch: DesignTokens = {
+  name: 'Sketch',
+  description: 'Hand-drawn, playful aesthetic with wobbly borders, organic shapes, and casual typography. Perfect for creative, approachable brands.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#2D3748',
+    secondary: '#4A5568',
+    accent: '#ED8936',
+    background: '#FFFDF7',
+    foreground: '#1A202C',
+    muted: '#718096',
+    border: '#2D3748',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Caveat", cursive, ui-sans-serif',
+      body: '"Patrick Hand", cursive, ui-sans-serif',
+    },
+    fontSizes: ['14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96],
+  },
+  borderRadius: ['4px', '8px', '12px', '16px'],
+  shadows: [
+    '2px 2px 0px #2D3748',
+    '4px 4px 0px #2D3748',
+  ],
+};
+
+// ============================================================================
+// INDUSTRIAL STYLE
+// ============================================================================
+
+export const industrial: DesignTokens = {
+  name: 'Industrial',
+  description: 'Raw, utilitarian design inspired by factories and warehouses. Features exposed grid structures, bold typography, and muted earth tones.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#DC2626',
+    secondary: '#F59E0B',
+    background: '#F5F5F4',
+    foreground: '#1C1917',
+    muted: '#78716C',
+    border: '#D6D3D1',
+    card: '#E7E5E4',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Bebas Neue", ui-sans-serif, system-ui, sans-serif',
+      body: '"Roboto Condensed", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '24px', '32px', '48px', '64px', '80px', '96px'],
+    fontWeights: [400, 500, 700, 900],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '2px', '4px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px',
+    'rgba(0, 0, 0, 0.15) 0px 4px 6px 0px',
+  ],
+};
+
+// ============================================================================
+// ORGANIC / NATURAL STYLE
+// ============================================================================
+
+export const organic: DesignTokens = {
+  name: 'Organic',
+  description: 'Nature-inspired design with earthy colors, flowing curves, and botanical accents. Perfect for wellness, eco-friendly, and lifestyle brands.',
+  mode: 'light',
+  type: 'serif',
+  colors: {
+    primary: '#059669',
+    secondary: '#0D9488',
+    accent: '#D97706',
+    background: '#FEFDFB',
+    foreground: '#1C1917',
+    muted: '#6B7280',
+    border: '#E5E7EB',
+    card: '#F9FAFB',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Cormorant Garamond", ui-serif, Georgia, serif',
+      body: '"Source Sans Pro", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['8px', '16px', '24px', '32px', '48px', '9999px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.05) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px',
+    'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px',
+  ],
+};
+
+// ============================================================================
+// MAXIMALISM STYLE
+// ============================================================================
+
+export const maximalism: DesignTokens = {
+  name: 'Maximalism',
+  description: 'Bold, expressive design that embraces excess. Features vibrant colors, layered patterns, mixed typography, and dense visual information.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#EC4899',
+    secondary: '#8B5CF6',
+    accent: '#F59E0B',
+    background: '#FAFAFA',
+    foreground: '#18181B',
+    muted: '#71717A',
+    border: '#E4E4E7',
+    tertiary: '#06B6D4',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Archivo Black", ui-sans-serif, system-ui, sans-serif',
+      body: '"DM Sans", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '20px', '24px', '32px', '40px', '56px', '72px', '96px', '128px'],
+    fontWeights: [400, 500, 700, 900],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '8px', '16px', '32px', '9999px'],
+  shadows: [
+    'rgba(236, 72, 153, 0.3) 4px 4px 0px 0px',
+    'rgba(139, 92, 246, 0.3) 8px 8px 0px 0px',
+    'rgba(6, 182, 212, 0.3) -4px -4px 0px 0px',
+  ],
+};
+
+// ============================================================================
+// RETRO STYLE
+// ============================================================================
+
+export const retro: DesignTokens = {
+  name: 'Retro',
+  description: '70s/80s-inspired design with warm colors, rounded shapes, and nostalgic typography. Features orange, brown, and cream color palettes.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#EA580C',
+    secondary: '#92400E',
+    accent: '#FBBF24',
+    background: '#FEF3C7',
+    foreground: '#451A03',
+    muted: '#78350F',
+    border: '#D97706',
+    card: '#FDE68A',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Righteous", ui-sans-serif, system-ui, sans-serif',
+      body: '"Poppins", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '24px', '32px', '40px', '56px', '72px', '96px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['8px', '16px', '24px', '32px', '9999px'],
+  shadows: [
+    'rgba(234, 88, 12, 0.2) 0px 4px 8px 0px',
+    'rgba(146, 64, 14, 0.2) 0px 8px 16px 0px',
+  ],
+};
+
+// ============================================================================
+// VAPORWAVE STYLE
+// ============================================================================
+
+export const vaporwave: DesignTokens = {
+  name: 'Vaporwave',
+  description: '90s internet aesthetic with neon pink/cyan gradients, retro-futuristic elements, and nostalgic digital imagery. Features sunset gradients and grid patterns.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#FF00FF',
+    secondary: '#00FFFF',
+    accent: '#FF6EC7',
+    background: '#0D0221',
+    foreground: '#FFFFFF',
+    muted: '#B794F4',
+    border: 'rgba(255, 0, 255, 0.3)',
+    card: '#1A0533',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Monoton", cursive, ui-sans-serif',
+      body: '"VT323", monospace, ui-sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '20px', '24px', '32px', '48px', '64px', '80px', '96px'],
+    fontWeights: [400, 500, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '4px', '8px', '16px'],
+  shadows: [
+    'rgba(255, 0, 255, 0.5) 0px 0px 20px 0px',
+    'rgba(0, 255, 255, 0.5) 0px 0px 40px 0px',
+  ],
+  effects: {
+    backdrop: 'blur(8px)',
+  },
+};
+
+// ============================================================================
+// ACADEMIA STYLE
+// ============================================================================
+
+export const academia: DesignTokens = {
+  name: 'Academia',
+  description: 'Classic scholarly aesthetic with rich browns, cream backgrounds, and traditional serif typography. Evokes old libraries, vintage books, and intellectual pursuits.',
+  mode: 'light',
+  type: 'serif',
+  colors: {
+    primary: '#7C2D12',
+    secondary: '#92400E',
+    accent: '#B45309',
+    background: '#FEF7ED',
+    foreground: '#1C1917',
+    muted: '#78716C',
+    border: '#D6D3D1',
+    card: '#F5F5F4',
+  },
+  typography: {
+    fontFamily: {
+      display: '"EB Garamond", ui-serif, Georgia, serif',
+      body: '"Libre Baskerville", ui-serif, Georgia, serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '4px', '8px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.05) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px',
+  ],
+};
+
+// ============================================================================
+// PLAYFUL GEOMETRIC STYLE
+// ============================================================================
+
+export const playfulGeometric: DesignTokens = {
+  name: 'Playful Geometric',
+  description: 'Fun, colorful design with bold geometric shapes, bright primary colors, and playful animations. Perfect for children, games, and creative brands.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#3B82F6',
+    secondary: '#EF4444',
+    accent: '#FBBF24',
+    background: '#FFFFFF',
+    foreground: '#1E293B',
+    muted: '#64748B',
+    border: '#E2E8F0',
+    tertiary: '#10B981',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Fredoka One", ui-sans-serif, system-ui, sans-serif',
+      body: '"Nunito", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '32px', '40px', '48px', '64px', '80px'],
+    fontWeights: [400, 500, 600, 700, 800],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['8px', '12px', '16px', '24px', '32px', '9999px'],
+  shadows: [
+    'rgba(59, 130, 246, 0.3) 4px 4px 0px 0px',
+    'rgba(239, 68, 68, 0.3) 4px 4px 0px 0px',
+    'rgba(251, 191, 36, 0.3) 4px 4px 0px 0px',
+  ],
+};
+
+// ============================================================================
+// MINIMAL DARK STYLE
+// ============================================================================
+
+export const minimalDark: DesignTokens = {
+  name: 'Minimal Dark',
+  description: 'Ultra-clean dark mode design with subtle grays, minimal decoration, and precise typography. Focus on content with maximum negative space.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#FFFFFF',
+    secondary: '#A1A1AA',
+    background: '#09090B',
+    foreground: '#FAFAFA',
+    muted: '#71717A',
+    border: '#27272A',
+    card: '#18181B',
+  },
+  typography: {
+    fontFamily: {
+      display: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['4px', '6px', '8px', '12px', '16px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.2) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.3) 0px 4px 6px -1px',
+  ],
+};
+
+// ============================================================================
+// PROFESSIONAL / CORPORATE STYLE
+// ============================================================================
+
+export const professional: DesignTokens = {
+  name: 'Professional',
+  description: 'Clean, trustworthy corporate design with navy blue accents, ample whitespace, and conservative typography. Ideal for B2B, finance, and enterprise.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#1E40AF',
+    secondary: '#3B82F6',
+    background: '#FFFFFF',
+    foreground: '#111827',
+    muted: '#6B7280',
+    border: '#E5E7EB',
+    card: '#F9FAFB',
+  },
+  typography: {
+    fontFamily: {
+      display: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
+      body: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['4px', '6px', '8px', '12px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.05) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px',
+    'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px',
+  ],
+};
+
+// ============================================================================
+// BOTANICAL STYLE
+// ============================================================================
+
+export const botanical: DesignTokens = {
+  name: 'Botanical',
+  description: 'Elegant plant-inspired design with deep greens, floral accents, and refined serif typography. Perfect for gardens, wellness, and natural beauty brands.',
+  mode: 'light',
+  type: 'serif',
+  colors: {
+    primary: '#166534',
+    secondary: '#15803D',
+    accent: '#CA8A04',
+    background: '#FEFCE8',
+    foreground: '#14532D',
+    muted: '#4D7C0F',
+    border: '#A3E635',
+    card: '#F7FEE7',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Playfair Display", ui-serif, Georgia, serif',
+      body: '"Lora", ui-serif, Georgia, serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['4px', '8px', '16px', '24px', '32px'],
+  shadows: [
+    'rgba(22, 101, 52, 0.1) 0px 2px 4px 0px',
+    'rgba(22, 101, 52, 0.15) 0px 4px 8px 0px',
+  ],
+};
+
+// ============================================================================
+// ENTERPRISE STYLE
+// ============================================================================
+
+export const enterprise: DesignTokens = {
+  name: 'Enterprise',
+  description: 'Serious, data-focused design for dashboards and enterprise applications. Features neutral colors, dense information layouts, and functional typography.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#4F46E5',
+    secondary: '#7C3AED',
+    background: '#F8FAFC',
+    foreground: '#0F172A',
+    muted: '#64748B',
+    border: '#CBD5E1',
+    card: '#FFFFFF',
+    success: '#10B981',
+    warning: '#F59E0B',
+    error: '#EF4444',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Inter", ui-sans-serif, system-ui, sans-serif',
+      body: '"Inter", ui-sans-serif, system-ui, sans-serif',
+      mono: '"JetBrains Mono", monospace',
+    },
+    fontSizes: ['10px', '11px', '12px', '13px', '14px', '16px', '18px', '20px', '24px', '30px', '36px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64],
+  },
+  borderRadius: ['2px', '4px', '6px', '8px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.05) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px',
+  ],
+};
+
+// ============================================================================
+// MODERN DARK STYLE
+// ============================================================================
+
+export const modernDark: DesignTokens = {
+  name: 'Modern Dark',
+  description: 'Contemporary dark mode design with vibrant accent colors, smooth gradients, and modern typography. Perfect for tech products and creative apps.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#8B5CF6',
+    secondary: '#EC4899',
+    accent: '#06B6D4',
+    background: '#0A0A0B',
+    foreground: '#FAFAFA',
+    muted: '#A1A1AA',
+    border: '#27272A',
+    card: '#18181B',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Satoshi", ui-sans-serif, system-ui, sans-serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px', '96px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['6px', '8px', '12px', '16px', '20px', '24px'],
+  shadows: [
+    'rgba(139, 92, 246, 0.2) 0px 4px 16px 0px',
+    'rgba(236, 72, 153, 0.15) 0px 8px 32px 0px',
+  ],
+  effects: {
+    backdrop: 'blur(12px)',
+  },
+};
+
+// ============================================================================
+// NEWSPRINT STYLE
+// ============================================================================
+
+export const newsprint: DesignTokens = {
+  name: 'Newsprint',
+  description: 'Classic newspaper aesthetic with multi-column layouts, serif headlines, and black & white imagery. Evokes traditional journalism and print media.',
+  mode: 'light',
+  type: 'serif',
+  colors: {
+    primary: '#1A1A1A',
+    secondary: '#4A4A4A',
+    background: '#F5F5F0',
+    foreground: '#1A1A1A',
+    muted: '#666666',
+    border: '#D4D4D4',
+    card: '#FFFFFF',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Playfair Display", ui-serif, Georgia, serif',
+      body: '"Source Serif Pro", ui-serif, Georgia, serif',
+    },
+    fontSizes: ['11px', '12px', '14px', '16px', '18px', '24px', '30px', '36px', '48px', '60px', '72px'],
+    fontWeights: [400, 500, 600, 700, 900],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96],
+  },
+  borderRadius: ['0px'],
+  shadows: [],
+};
+
+// ============================================================================
+// SWISS MINIMALIST STYLE
+// ============================================================================
+
+export const swissMinimalist: DesignTokens = {
+  name: 'Swiss Minimalist',
+  description: 'Clean, grid-based design inspired by Swiss/International style. Features Helvetica-style typography, strong grid systems, and maximum clarity.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#000000',
+    secondary: '#E53935',
+    background: '#FFFFFF',
+    foreground: '#000000',
+    muted: '#757575',
+    border: '#E0E0E0',
+    card: '#FAFAFA',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+      body: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    },
+    fontSizes: ['10px', '12px', '14px', '16px', '18px', '21px', '24px', '36px', '48px', '60px', '72px', '96px'],
+    fontWeights: [300, 400, 500, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128],
+  },
+  borderRadius: ['0px'],
+  shadows: [],
+};
+
+// ============================================================================
+// KINETIC STYLE
+// ============================================================================
+
+export const kinetic: DesignTokens = {
+  name: 'Kinetic',
+  description: 'Motion-focused design with dynamic elements, animation-ready layouts, and energetic color schemes. Perfect for sports, fitness, and action brands.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#FF3D00',
+    secondary: '#FFEA00',
+    accent: '#00E676',
+    background: '#0D0D0D',
+    foreground: '#FFFFFF',
+    muted: '#9E9E9E',
+    border: '#424242',
+    card: '#1A1A1A',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Oswald", ui-sans-serif, system-ui, sans-serif',
+      body: '"Roboto", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '24px', '32px', '48px', '64px', '80px', '96px', '128px'],
+    fontWeights: [400, 500, 600, 700, 800],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '4px', '8px'],
+  shadows: [
+    'rgba(255, 61, 0, 0.4) 0px 4px 16px 0px',
+    'rgba(255, 234, 0, 0.3) 0px 8px 32px 0px',
+  ],
+};
+
+// ============================================================================
+// FLAT DESIGN STYLE
+// ============================================================================
+
+export const flatDesign: DesignTokens = {
+  name: 'Flat Design',
+  description: 'Clean, 2D aesthetic with solid colors, no gradients or shadows, and simple geometric shapes. Emphasis on clarity and usability.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#2196F3',
+    secondary: '#4CAF50',
+    accent: '#FF9800',
+    background: '#FFFFFF',
+    foreground: '#212121',
+    muted: '#9E9E9E',
+    border: '#E0E0E0',
+    card: '#FAFAFA',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
+      body: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px'],
+    fontWeights: [400, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96],
+  },
+  borderRadius: ['4px', '8px', '12px', '16px'],
+  shadows: [],
+};
+
+// ============================================================================
+// MATERIAL DESIGN STYLE
+// ============================================================================
+
+export const materialDesign: DesignTokens = {
+  name: 'Material Design',
+  description: 'Google Material Design principles with elevation through shadows, vibrant colors, and motion design. Features the 8dp grid system.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#6200EE',
+    secondary: '#03DAC6',
+    accent: '#BB86FC',
+    background: '#FFFFFF',
+    foreground: '#1D1D1D',
+    muted: '#757575',
+    border: '#E0E0E0',
+    card: '#FFFFFF',
+    error: '#B00020',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Roboto", ui-sans-serif, system-ui, sans-serif',
+      body: '"Roboto", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['10px', '12px', '14px', '16px', '20px', '24px', '34px', '48px', '60px', '96px'],
+    fontWeights: [300, 400, 500, 700],
+  },
+  spacing: {
+    base: 8,
+    scale: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96],
+  },
+  borderRadius: ['4px', '8px', '12px', '16px', '24px', '28px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px',
+    'rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px, rgba(0, 0, 0, 0.2) 0px 2px 4px -1px',
+    'rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px, rgba(0, 0, 0, 0.2) 0px 5px 5px -3px',
+    'rgba(0, 0, 0, 0.14) 0px 16px 24px 2px, rgba(0, 0, 0, 0.12) 0px 6px 30px 5px, rgba(0, 0, 0, 0.2) 0px 8px 10px -5px',
+  ],
+};
+
+// ============================================================================
+// BOLD TYPOGRAPHY STYLE
+// ============================================================================
+
+export const boldTypography: DesignTokens = {
+  name: 'Bold Typography',
+  description: 'Statement-making design where typography is the hero. Features oversized headlines, dramatic weight contrasts, and minimal decoration.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#FFFFFF',
+    secondary: '#A3A3A3',
+    background: '#0A0A0A',
+    foreground: '#FFFFFF',
+    muted: '#737373',
+    border: '#262626',
+    card: '#171717',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Anton", ui-sans-serif, system-ui, sans-serif',
+      body: '"Work Sans", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '20px', '24px', '36px', '48px', '72px', '96px', '128px', '192px'],
+    fontWeights: [400, 500, 700, 900],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128],
+  },
+  borderRadius: ['0px', '4px', '8px'],
+  shadows: [],
+};
+
+// ============================================================================
+// CARAMELL STYLE (from caramell.app)
+// ============================================================================
+
+export const caramell: DesignTokens = {
+  name: 'Caramell',
+  description: 'Warm, friendly design with caramel brown accents, cream backgrounds, and playful mixed typography. Features floating glassmorphism navigation and modern SaaS aesthetics.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#8B5A2B',
+    secondary: '#D2691E',
+    accent: '#FFD700',
+    background: '#FFFDF5',
+    foreground: '#1A1A1A',
+    muted: '#6B7280',
+    border: '#E5E7EB',
+    card: '#FEFDFB',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Geist", "Playfair Display", ui-sans-serif, system-ui, sans-serif',
+      body: '"Geist", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px', '96px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['8px', '12px', '16px', '20px', '24px', '9999px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.05) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px',
+    'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px',
+  ],
+  effects: {
+    backdrop: 'blur(12px)',
+  },
+};
+
+// ============================================================================
+// AURA STYLE (from aura.build)
+// ============================================================================
+
+export const aura: DesignTokens = {
+  name: 'Aura',
+  description: 'Modern dark-first design with subtle grays, minimal decoration, and shadcn/ui-compatible HSL color system. Features layered soft shadows and elegant transitions.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#FAFAFA',
+    secondary: '#A3A3A3',
+    background: '#171717',
+    foreground: '#FAFAFA',
+    muted: '#A6A6A6',
+    border: '#333333',
+    card: '#1C1C1C',
+    ring: '#CCCCCC',
+  },
+  typography: {
+    fontFamily: {
+      display: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['8px', '10px', '12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px'],
+    fontWeights: [100, 400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96],
+  },
+  borderRadius: ['6px', '8px', '12px', '14px', '16px', '9999px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.06) 0px 6px 6px -3px',
+    'rgba(0, 0, 0, 0.15) 0px 40px 80px 0px',
+  ],
+  effects: {
+    backdrop: 'blur(24px)',
+  },
+};
+
+// ============================================================================
 // ALL STYLES COLLECTION
 // ============================================================================
 
@@ -503,6 +1347,28 @@ export const allStyles = {
   luxury,
   artDeco,
   web3,
+  glassmorphism,
+  sketch,
+  industrial,
+  organic,
+  maximalism,
+  retro,
+  vaporwave,
+  academia,
+  playfulGeometric,
+  minimalDark,
+  professional,
+  botanical,
+  enterprise,
+  modernDark,
+  newsprint,
+  swissMinimalist,
+  kinetic,
+  flatDesign,
+  materialDesign,
+  boldTypography,
+  caramell,
+  aura,
 } as const;
 
 export type StyleName = keyof typeof allStyles;
@@ -512,6 +1378,7 @@ export type StyleName = keyof typeof allStyles;
 // ============================================================================
 
 export const styleMetadata = [
+  // Original designprompts.dev styles
   { id: 'monochrome', name: 'Monochrome', mode: 'light', type: 'serif', category: 'Editorial' },
   { id: 'cyberpunk', name: 'Cyberpunk', mode: 'dark', type: 'mono', category: 'Futuristic' },
   { id: 'neoBrutalism', name: 'Neo Brutalism', mode: 'light', type: 'sans', category: 'Bold' },
@@ -523,38 +1390,53 @@ export const styleMetadata = [
   { id: 'luxury', name: 'Luxury', mode: 'light', type: 'serif', category: 'Premium' },
   { id: 'artDeco', name: 'Art Deco', mode: 'dark', type: 'sans', category: 'Vintage' },
   { id: 'web3', name: 'Web3', mode: 'dark', type: 'sans', category: 'Crypto' },
+  // Additional designprompts.dev styles
+  { id: 'glassmorphism', name: 'Glassmorphism', mode: 'dark', type: 'sans', category: 'Modern' },
+  { id: 'sketch', name: 'Sketch', mode: 'light', type: 'sans', category: 'Creative' },
+  { id: 'industrial', name: 'Industrial', mode: 'light', type: 'sans', category: 'Bold' },
+  { id: 'organic', name: 'Organic', mode: 'light', type: 'serif', category: 'Natural' },
+  { id: 'maximalism', name: 'Maximalism', mode: 'light', type: 'sans', category: 'Bold' },
+  { id: 'retro', name: 'Retro', mode: 'light', type: 'sans', category: 'Vintage' },
+  { id: 'vaporwave', name: 'Vaporwave', mode: 'dark', type: 'sans', category: 'Futuristic' },
+  { id: 'academia', name: 'Academia', mode: 'light', type: 'serif', category: 'Editorial' },
+  { id: 'playfulGeometric', name: 'Playful Geometric', mode: 'light', type: 'sans', category: 'Playful' },
+  { id: 'minimalDark', name: 'Minimal Dark', mode: 'dark', type: 'sans', category: 'Minimal' },
+  { id: 'professional', name: 'Professional', mode: 'light', type: 'sans', category: 'Professional' },
+  { id: 'botanical', name: 'Botanical', mode: 'light', type: 'serif', category: 'Natural' },
+  { id: 'enterprise', name: 'Enterprise', mode: 'light', type: 'sans', category: 'Professional' },
+  { id: 'modernDark', name: 'Modern Dark', mode: 'dark', type: 'sans', category: 'Modern' },
+  { id: 'newsprint', name: 'Newsprint', mode: 'light', type: 'serif', category: 'Editorial' },
+  { id: 'swissMinimalist', name: 'Swiss Minimalist', mode: 'light', type: 'sans', category: 'Minimal' },
+  { id: 'kinetic', name: 'Kinetic', mode: 'dark', type: 'sans', category: 'Bold' },
+  { id: 'flatDesign', name: 'Flat Design', mode: 'light', type: 'sans', category: 'Modern' },
+  { id: 'materialDesign', name: 'Material Design', mode: 'light', type: 'sans', category: 'Modern' },
+  { id: 'boldTypography', name: 'Bold Typography', mode: 'dark', type: 'sans', category: 'Editorial' },
+  // External sources
+  { id: 'caramell', name: 'Caramell', mode: 'light', type: 'sans', category: 'SaaS', source: 'caramell.app' },
+  { id: 'aura', name: 'Aura', mode: 'dark', type: 'sans', category: 'Modern', source: 'aura.build' },
 ] as const;
 
 // ============================================================================
-// ADDITIONAL DESIGNPROMPTS.DEV STYLES (Metadata)
-// Full tokens available at designprompts.dev
+// STYLE CATEGORIES
 // ============================================================================
 
-export const additionalStyles = [
-  { id: 'bauhaus', name: 'Bauhaus', mode: 'light', type: 'sans' },
-  { id: 'modern-dark', name: 'Modern Dark', mode: 'dark', type: 'sans' },
-  { id: 'newsprint', name: 'Newsprint', mode: 'light', type: 'serif' },
-  { id: 'luxury', name: 'Luxury', mode: 'light', type: 'serif' },
-  { id: 'swiss-minimalist', name: 'Swiss Minimalist', mode: 'light', type: 'sans' },
-  { id: 'kinetic', name: 'Kinetic', mode: 'dark', type: 'sans' },
-  { id: 'flat-design', name: 'Flat Design', mode: 'light', type: 'sans' },
-  { id: 'art-deco', name: 'Art Deco', mode: 'dark', type: 'serif' },
-  { id: 'material-design', name: 'Material Design', mode: 'light', type: 'sans' },
-  { id: 'bold-typography', name: 'Bold Typography', mode: 'dark', type: 'sans' },
-  { id: 'academia', name: 'Academia', mode: 'light', type: 'serif' },
-  { id: 'web3', name: 'Web3', mode: 'dark', type: 'sans' },
-  { id: 'playful-geometric', name: 'Playful Geometric', mode: 'light', type: 'sans' },
-  { id: 'minimal-dark', name: 'Minimal Dark', mode: 'dark', type: 'sans' },
-  { id: 'professional', name: 'Professional', mode: 'light', type: 'sans' },
-  { id: 'botanical', name: 'Botanical', mode: 'light', type: 'serif' },
-  { id: 'vaporwave', name: 'Vaporwave', mode: 'dark', type: 'sans' },
-  { id: 'enterprise', name: 'Enterprise', mode: 'light', type: 'sans' },
-  { id: 'sketch', name: 'Sketch', mode: 'light', type: 'sans' },
-  { id: 'industrial', name: 'Industrial', mode: 'light', type: 'sans' },
-  { id: 'neumorphism', name: 'Neumorphism', mode: 'light', type: 'sans' },
-  { id: 'organic', name: 'Organic', mode: 'light', type: 'sans' },
-  { id: 'maximalism', name: 'Maximalism', mode: 'light', type: 'sans' },
-  { id: 'retro', name: 'Retro', mode: 'light', type: 'sans' },
-] as const;
+export const styleCategories = {
+  Editorial: ['monochrome', 'academia', 'newsprint', 'boldTypography'],
+  Futuristic: ['cyberpunk', 'vaporwave'],
+  Bold: ['neoBrutalism', 'industrial', 'maximalism', 'kinetic'],
+  Professional: ['saasTech', 'professional', 'enterprise'],
+  Playful: ['claymorphism', 'playfulGeometric'],
+  Developer: ['terminal'],
+  Geometric: ['bauhaus'],
+  'Soft UI': ['neumorphism'],
+  Premium: ['luxury'],
+  Vintage: ['artDeco', 'retro'],
+  Crypto: ['web3'],
+  Modern: ['glassmorphism', 'modernDark', 'flatDesign', 'materialDesign', 'aura'],
+  Creative: ['sketch'],
+  Natural: ['organic', 'botanical'],
+  Minimal: ['minimalDark', 'swissMinimalist'],
+  SaaS: ['caramell'],
+} as const;
 
 export default allStyles;
