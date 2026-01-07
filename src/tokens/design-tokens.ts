@@ -282,6 +282,212 @@ export const terminal: DesignTokens = {
 };
 
 // ============================================================================
+// BAUHAUS STYLE
+// ============================================================================
+
+export const bauhaus: DesignTokens = {
+  name: 'Bauhaus',
+  description: 'Bold geometric design inspired by the Bauhaus movement. Primary colors (red, blue, yellow), strong black borders, hard offset shadows, and clean sans-serif typography.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#D02020', // Red
+    secondary: '#1040C0', // Blue
+    accent: '#F0C020', // Yellow
+    background: '#FFFFFF',
+    foreground: '#000000',
+    muted: '#121212',
+    border: '#000000',
+    card: '#F0F0F0',
+  },
+  typography: {
+    fontFamily: {
+      display: 'Outfit, ui-sans-serif, system-ui, sans-serif',
+      body: 'ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px', '96px'],
+    fontWeights: [400, 500, 600, 700, 800],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '6px', '8px', '12px', '16px'],
+  shadows: [
+    'rgb(0, 0, 0) 4px 4px 0px 0px',
+    'rgb(0, 0, 0) 8px 8px 0px 0px',
+    'rgb(0, 0, 0) 10px 10px 0px 0px',
+    'rgb(0, 0, 0) 12px 12px 0px 0px',
+  ],
+};
+
+// ============================================================================
+// NEUMORPHISM STYLE
+// ============================================================================
+
+export const neumorphism: DesignTokens = {
+  name: 'Neumorphism',
+  description: 'Soft UI design with dual light/dark shadows creating an extruded, 3D appearance. Elements appear pushed out or inset into the surface. Monochromatic color palette with subtle accents.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#6C63FF', // Purple accent
+    secondary: '#38B2AC', // Teal accent
+    background: '#E0E5EC',
+    foreground: '#3D4852',
+    muted: '#8B95A5',
+    border: 'transparent',
+    card: '#E0E5EC',
+  },
+  typography: {
+    fontFamily: {
+      display: '"DM Sans", ui-sans-serif, system-ui, sans-serif',
+      body: '"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '72px', '96px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['8px', '12px', '16px', '20px', '24px', '32px', '40px', '48px'],
+  shadows: [
+    'rgba(163, 177, 198, 0.6) 5px 5px 10px 0px, rgba(255, 255, 255, 0.5) -5px -5px 10px 0px',
+    'rgba(163, 177, 198, 0.6) 9px 9px 16px 0px, rgba(255, 255, 255, 0.5) -9px -9px 16px 0px',
+    'rgba(163, 177, 198, 0.7) 12px 12px 20px 0px, rgba(255, 255, 255, 0.6) -12px -12px 20px 0px',
+    'rgba(163, 177, 198, 0.6) 6px 6px 10px 0px inset, rgba(255, 255, 255, 0.5) -6px -6px 10px 0px inset',
+  ],
+};
+
+// ============================================================================
+// LUXURY STYLE
+// ============================================================================
+
+export const luxury: DesignTokens = {
+  name: 'Luxury',
+  description: 'Elegant, high-end design with gold accents, sophisticated serif typography, and refined color palette. Evokes premium brands, jewelry, and exclusive experiences.',
+  mode: 'light',
+  type: 'serif',
+  colors: {
+    primary: '#D4AF37', // Gold
+    secondary: '#B8860B', // Dark gold
+    background: '#F9F8F6',
+    foreground: '#1A1A1A',
+    muted: '#6C6863',
+    border: 'rgba(26, 26, 26, 0.1)',
+    card: '#EBE5DE',
+    accent: 'rgba(235, 229, 222, 0.8)',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Playfair Display", ui-serif, Georgia, serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['10px', '12px', '14px', '16px', '18px', '20px', '24px', '30px', '48px', '60px', '72px', '96px', '128px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '6px', '8px', '12px', '16px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.08) 0px 2px 12px 0px',
+    'rgba(0, 0, 0, 0.12) 0px 8px 32px 0px',
+    'rgba(0, 0, 0, 0.15) 0px 4px 16px 0px',
+  ],
+};
+
+// ============================================================================
+// ART DECO STYLE
+// ============================================================================
+
+export const artDeco: DesignTokens = {
+  name: 'Art Deco',
+  description: '1920s-inspired design with geometric patterns, gold accents on dark backgrounds, and elegant typography. Features diamond patterns, golden glow effects, and luxurious aesthetics.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#D4AF37', // Gold
+    secondary: '#F2F0E4', // Cream
+    background: '#0A0A0A',
+    foreground: '#F2F0E4',
+    muted: '#888888',
+    border: 'rgba(212, 175, 55, 0.3)',
+    card: '#141414',
+    glow: 'rgba(212, 175, 55, 0.3)',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Josefin Sans", ui-sans-serif, system-ui, sans-serif',
+      body: '"Josefin Sans", ui-sans-serif, system-ui, sans-serif',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '60px', '72px', '96px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['0px', '6px', '8px', '12px', '16px'],
+  shadows: [
+    'rgba(212, 175, 55, 0.1) 0px 0px 10px 0px',
+    'rgba(212, 175, 55, 0.1) 0px 0px 15px 0px',
+    'rgba(212, 175, 55, 0.1) 0px 0px 30px 0px',
+    'rgba(212, 175, 55, 0.4) 0px 0px 25px 0px',
+  ],
+  effects: {
+    backdrop: 'blur(8px)',
+  },
+};
+
+// ============================================================================
+// WEB3 / CRYPTO STYLE
+// ============================================================================
+
+export const web3: DesignTokens = {
+  name: 'Web3',
+  description: 'Futuristic crypto/blockchain aesthetic with orange/amber glow effects, dark backgrounds, and modern typography. Features glassmorphism overlays and grid patterns.',
+  mode: 'dark',
+  type: 'sans',
+  colors: {
+    primary: '#F7931A', // Bitcoin orange
+    secondary: '#EA580C', // Deep orange
+    accent: '#FFD600', // Gold/yellow
+    background: '#030304',
+    foreground: '#FFFFFF',
+    muted: '#94A3B8',
+    border: 'rgba(247, 147, 26, 0.3)',
+    card: '#0F1115',
+    glow: 'rgba(247, 147, 26, 0.4)',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Space Grotesk", ui-sans-serif, system-ui, sans-serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      mono: '"JetBrains Mono", monospace',
+    },
+    fontSizes: ['12px', '14px', '16px', '18px', '20px', '24px', '30px', '36px', '48px', '72px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['4px', '6px', '8px', '12px', '16px'],
+  shadows: [
+    'rgba(247, 147, 26, 0.3) 0px 0px 10px 0px',
+    'rgba(247, 147, 26, 0.4) 0px 0px 15px 0px',
+    'rgba(247, 147, 26, 0.5) 0px 0px 15px 0px',
+    'rgba(247, 147, 26, 0.2) 0px 0px 20px -5px',
+  ],
+  effects: {
+    backdrop: 'blur(12px)',
+  },
+};
+
+// ============================================================================
 // ALL STYLES COLLECTION
 // ============================================================================
 
@@ -292,6 +498,11 @@ export const allStyles = {
   saasTech,
   claymorphism,
   terminal,
+  bauhaus,
+  neumorphism,
+  luxury,
+  artDeco,
+  web3,
 } as const;
 
 export type StyleName = keyof typeof allStyles;
@@ -307,6 +518,11 @@ export const styleMetadata = [
   { id: 'saasTech', name: 'SaaS Tech', mode: 'light', type: 'sans', category: 'Professional' },
   { id: 'claymorphism', name: 'Claymorphism', mode: 'light', type: 'sans', category: 'Playful' },
   { id: 'terminal', name: 'Terminal CLI', mode: 'dark', type: 'mono', category: 'Developer' },
+  { id: 'bauhaus', name: 'Bauhaus', mode: 'light', type: 'sans', category: 'Geometric' },
+  { id: 'neumorphism', name: 'Neumorphism', mode: 'light', type: 'sans', category: 'Soft UI' },
+  { id: 'luxury', name: 'Luxury', mode: 'light', type: 'serif', category: 'Premium' },
+  { id: 'artDeco', name: 'Art Deco', mode: 'dark', type: 'sans', category: 'Vintage' },
+  { id: 'web3', name: 'Web3', mode: 'dark', type: 'sans', category: 'Crypto' },
 ] as const;
 
 // ============================================================================

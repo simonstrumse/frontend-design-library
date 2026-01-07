@@ -48,6 +48,11 @@ export {
   saasTech,
   claymorphism,
   terminal,
+  bauhaus,
+  neumorphism,
+  luxury,
+  artDeco,
+  web3,
 
   // Collections
   allStyles,
