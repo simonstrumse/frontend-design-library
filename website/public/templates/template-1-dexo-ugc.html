@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dexo Media | Modern UGC Excellence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dexo-bg': '#0a0a0a',
+            'dexo-surface': '#111111',
+            'dexo-border': 'rgba(255, 255, 255, 0.1)',
+            'dexo-accent': '#B9F2FF',
+          },
+          fontFamily: {
+            'instrument': ['Instrument Serif', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { cursor: none; }
+    body { background-color: #0a0a0a; color: #fff; }
+    .custom-cursor {
+      width: 20px; height: 20px;
+      background: #B9F2FF;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      transition: transform 0.1s ease;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn-glow { position: relative; overflow: hidden; }
+    .btn-glow::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: conic-gradient(transparent, #B9F2FF, transparent, transparent);
+      animation: rotate 4s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .btn-glow:hover::after { opacity: 1; }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .marquee-track { display: flex; gap: 4rem; animation: marquee 20s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+</head>
+<body class="bg-dexo-bg text-white overflow-x-hidden">
+  <!-- Custom Cursor -->
+  <div id="cursor" class="custom-cursor"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl">
+    <div class="glass rounded-full px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-6 h-6 text-dexo-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span class="font-bold tracking-tighter text-xl">DEXO</span>
+      </div>
+      <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium">
+        <a href="#" class="hover:text-dexo-accent transition-colors">Work</a>
+        <a href="#" class="hover:text-dexo-accent transition-colors">Services</a>
+        <a href="#" class="hover:text-dexo-accent transition-colors">About</a>
+      </div>
+      <a href="#call" class="px-6 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all text-sm font-medium">
+        Book a Call
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 relative overflow-hidden">
+    <!-- Background Glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-dexo-accent blur-[120px] rounded-full"></div>
+    </div>
+
+    <div class="text-center max-w-5xl z-10" id="hero-title">
+      <h1 class="text-6xl md:text-9xl font-instrument leading-[0.9] tracking-tight mb-8">
+        <span class="block">UGC content that</span>
+        <span class="italic text-dexo-accent">actually</span> converts
+      </h1>
+      <p class="text-lg md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 font-light">
+        Dexo Media bridges the gap between raw creativity and performance marketing. We build the bridges, you get the sales.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:bg-dexo-accent transition-all btn-glow">
+          Start Your Campaign
+        </button>
+        <button class="px-10 py-5 border border-white/30 rounded-full font-bold text-lg hover:bg-white/10 transition-all">
+          View Case Studies
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div id="hero-image-container" class="mt-16 w-full max-w-5xl">
+      <div class="glass rounded-3xl p-2 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80"
+             alt="Creative team planning"
+             class="w-full h-auto rounded-2xl object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-32 px-6 bg-dexo-surface border-y border-dexo-border">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="stat-item">
+        <div class="text-5xl font-instrument text-dexo-accent mb-2">4.2M+</div>
+        <div class="text-white/40 uppercase tracking-widest text-sm">Total Views Generated</div>
+      </div>
+      <div class="stat-item">
+        <div class="text-5xl font-instrument text-dexo-accent mb-2">240%</div>
+        <div class="text-white/40 uppercase tracking-widest text-sm">Average ROAS Increase</div>
+      </div>
+      <div class="stat-item">
+        <div class="text-5xl font-instrument text-dexo-accent mb-2">500+</div>
+        <div class="text-white/40 uppercase tracking-widest text-sm">Creator Network Size</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <h2 class="text-5xl md:text-7xl font-instrument max-w-xl leading-tight">
+          Our <span class="italic">diamond-standard</span> process
+        </h2>
+        <p class="text-white/50 max-w-xs">
+          We handle the heavy lifting while you watch the metrics climb.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <!-- Large Card -->
+        <div class="md:col-span-8 h-[400px] glass rounded-3xl p-10 flex flex-col justify-end relative overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80"
+               alt="Camera lens"
+               class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700">
+          <h3 class="text-3xl font-instrument mb-3 relative z-10">Strategic Sourcing</h3>
+          <p class="text-white/60 relative z-10">We don't just find influencers; we find creators who embody your brand's soul.</p>
+        </div>
+
+        <!-- Small Card -->
+        <div class="md:col-span-4 h-[400px] glass rounded-3xl p-10 flex flex-col justify-end">
+          <h3 class="text-2xl font-instrument mb-3">Viral Scripting</h3>
+          <p class="text-white/60 text-sm">Hooks that stop the scroll. Retention that builds the brand.</p>
+        </div>
+
+        <!-- Small Card -->
+        <div class="md:col-span-4 h-[400px] glass rounded-3xl p-10 flex flex-col justify-end">
+          <div class="text-6xl font-instrument text-dexo-accent mb-4">03</div>
+          <h3 class="text-2xl font-instrument mb-3">Content Pipeline</h3>
+          <p class="text-white/60 text-sm">Consistent, high-quality assets delivered every single month.</p>
+        </div>
+
+        <!-- Large Card -->
+        <div class="md:col-span-8 h-[400px] glass rounded-3xl p-10 flex flex-col justify-end relative overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+               alt="Analytics dashboard"
+               class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700">
+          <h3 class="text-3xl font-instrument mb-3 relative z-10">Ad Performance</h3>
+          <p class="text-white/60 relative z-10">Whitelisting and dark posts that drive measurable ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Section -->
+  <section class="py-20 overflow-hidden border-y border-dexo-border">
+    <div class="marquee-track text-6xl md:text-8xl font-instrument whitespace-nowrap">
+      <span class="text-white/20">DEXO MEDIA</span>
+      <span class="text-dexo-accent">UGC MASTERY</span>
+      <span class="text-white/20">DEXO MEDIA</span>
+      <span class="text-dexo-accent">UGC MASTERY</span>
+      <span class="text-white/20">DEXO MEDIA</span>
+      <span class="text-dexo-accent">UGC MASTERY</span>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="call" class="py-40 px-6 relative">
+    <div class="max-w-4xl mx-auto glass rounded-[40px] p-12 md:p-24 text-center relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-dexo-accent/10 blur-[100px] rounded-full"></div>
+      <div class="relative z-10">
+        <h2 class="text-5xl md:text-8xl font-instrument mb-8 leading-none">
+          Ready to <span class="italic">scale</span> your brand?
+        </h2>
+        <p class="text-xl text-white/60 mb-12 max-w-xl mx-auto">
+          Join the elite 1% of brands using data-driven UGC to dominate social commerce.
+        </p>
+        <button class="px-12 py-6 bg-white text-black rounded-full font-bold text-xl hover:bg-dexo-accent transition-all">
+          Book Your Free Strategy Call
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-20 pb-10 px-6 border-t border-dexo-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start mb-20">
+        <div class="flex items-center gap-2 mb-8 md:mb-0">
+          <svg class="w-8 h-8 text-dexo-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span class="font-bold tracking-tighter text-2xl">DEXO</span>
+        </div>
+        <div class="flex gap-8 text-sm">
+          <a href="#" class="hover:text-dexo-accent transition-colors">Instagram</a>
+          <a href="#" class="hover:text-dexo-accent transition-colors">LinkedIn</a>
+          <a href="#" class="hover:text-dexo-accent transition-colors">Twitter</a>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center text-white/30 text-xs">
+        <span>© 2024 DEXO MEDIA GROUP. ALL RIGHTS RESERVED.</span>
+        <span>DESIGNED BY CARAMELL</span>
+      </div>
+      <div class="mt-20">
+        <h3 class="text-[20vw] font-instrument text-white/5 leading-none text-center">DEXO MEDIA</h3>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Custom Cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+    });
+
+    // Hero Animations
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline();
+    tl.from("nav", { y: -100, opacity: 0, duration: 1, ease: "power4.out" })
+      .from("#hero-title", { y: 100, opacity: 0, duration: 1.2, ease: "power4.out" }, "-=0.5")
+      .from("#hero-image-container", { scale: 0.9, opacity: 0, duration: 1.5, ease: "power3.out" }, "-=0.8");
+
+    // Scroll Animations
+    gsap.utils.toArray('.stat-item').forEach((item, i) => {
+      gsap.from(item, {
+        scrollTrigger: { trigger: item, start: "top 90%" },
+        y: 50, opacity: 0, duration: 0.8, delay: i * 0.2
+      });
+    });
+
+    // Service Cards Animation
+    gsap.utils.toArray('.glass').forEach(card => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 85%", toggleActions: "play none none reverse" },
+        y: 60, opacity: 0, duration: 1, ease: "power2.out"
+      });
+    });
+  </script>
+</body>
+</html>

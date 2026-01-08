@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELOUR | Digital Fashion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'mont': ['Montserrat', 'sans-serif'],
+            'sans': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #050505; color: #fff; overflow-x: hidden; cursor: none; }
+    #cursor {
+      position: fixed; top: 0; left: 0;
+      width: 20px; height: 20px;
+      background: white; border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+    }
+    a:hover ~ #cursor, button:hover ~ #cursor { width: 50px; height: 50px; }
+    #shaderContainer {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%; z-index: 0;
+    }
+    .hero-subtitle, .hero-title, .hero-desc, .hero-btn {
+      opacity: 0; transform: translateY(30px);
+    }
+    .panel { min-width: 33.33vw; }
+    .system-info { font-family: 'Courier New', monospace; }
+  </style>
+</head>
+<body>
+  <!-- Shader Background Container -->
+  <div id="shaderContainer"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full px-6 py-6 flex justify-between items-center mix-blend-difference text-white z-50">
+    <div class="text-2xl font-mont font-black tracking-tighter uppercase">
+      Velour<span class="text-xs align-top opacity-70">®</span>
+    </div>
+    <div class="hidden md:flex gap-12 font-sans text-xs tracking-[0.2em] uppercase font-medium">
+      <a href="#" class="hover:text-gray-300 transition-colors relative group">
+        Collections
+        <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#runway" class="hover:text-gray-300 transition-colors relative group">
+        Runway
+        <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#" class="hover:text-gray-300 transition-colors relative group">
+        Archive
+        <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </div>
+    <button class="px-6 py-2 border border-white/30 rounded-full text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-all">
+      Cart (0)
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex flex-col justify-center items-center px-4 overflow-hidden">
+    <div class="relative z-10 text-center">
+      <p class="hero-subtitle text-xs tracking-[0.4em] uppercase mb-4 text-white/50">Digital Haute Couture</p>
+      <h1 class="hero-title text-[15vw] md:text-[12vw] font-mont font-black leading-[0.85] tracking-tighter uppercase">
+        VELOUR
+      </h1>
+      <p class="hero-desc max-w-md mx-auto mt-6 text-white/60 font-light text-sm md:text-base leading-relaxed">
+        Where algorithmic precision meets organic chaos. Redefining the boundaries of wearable reality.
+      </p>
+      <button class="hero-btn mt-10 px-10 py-4 border border-white/40 rounded-full text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all duration-500">
+        Enter The Void
+      </button>
+    </div>
+
+    <!-- System Info -->
+    <div class="absolute bottom-8 left-8 system-info text-[10px] text-white/30 space-y-1">
+      <div>LAT: 40.7128° N</div>
+      <div>LNG: 74.0060° W</div>
+      <div>SYS: ONLINE</div>
+    </div>
+
+    <!-- Collection Badge -->
+    <div class="absolute bottom-8 right-8 text-right">
+      <div class="text-[10px] tracking-widest text-white/30 uppercase">Collection 2024</div>
+    </div>
+  </section>
+
+  <!-- Runway Section (Horizontal Scroll) -->
+  <section id="runway" class="relative h-screen bg-white text-black overflow-hidden">
+    <div class="absolute top-8 left-8 z-20">
+      <h2 class="text-xs tracking-[0.3em] uppercase font-medium">THE RUNWAY</h2>
+      <p class="text-xs text-black/50 mt-2 max-w-xs">
+        Scroll to explore the sequence. A study in monochromatic silence and digital noise.
+      </p>
+    </div>
+
+    <div class="absolute top-8 right-8 z-20 text-xs text-black/40">
+      ( Drag / Scroll ) ->
+    </div>
+
+    <div class="runway-container flex h-full items-center pt-20">
+      <!-- Panel 1 -->
+      <div class="panel h-[70vh] flex items-center justify-center px-8">
+        <div class="relative group">
+          <div class="w-[300px] md:w-[400px] h-[450px] md:h-[550px] bg-black/5 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80"
+                 alt="Runway Look 1"
+                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+          </div>
+          <div class="absolute -bottom-8 left-0 text-[10px] tracking-widest uppercase text-black/40">
+            001 // VOID WALKER
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="panel h-[70vh] flex items-center justify-center px-8">
+        <div class="relative group">
+          <div class="w-[300px] md:w-[400px] h-[450px] md:h-[550px] bg-black/5 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80"
+                 alt="Runway Look 2"
+                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+          </div>
+          <div class="absolute -bottom-8 left-0 text-[10px] tracking-widest uppercase text-black/40">
+            002 // STATIC NOISE
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="panel h-[70vh] flex items-center justify-center px-8">
+        <div class="relative group">
+          <div class="w-[300px] md:w-[400px] h-[450px] md:h-[550px] bg-black/5 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                 alt="Runway Look 3"
+                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+          </div>
+          <div class="absolute -bottom-8 left-0 text-[10px] tracking-widest uppercase text-black/40">
+            003 // BINARY SILK
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Section -->
+  <section id="collection" class="py-32 px-4 md:px-8 bg-black border-t border-white/10 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-end mb-16">
+        <h2 class="text-4xl md:text-6xl font-mont font-black tracking-tight">Curated Objects</h2>
+        <span class="text-xs tracking-widest text-white/40 uppercase">Season 04 / 2024</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Product 1 -->
+        <div class="group">
+          <div class="aspect-[3/4] bg-white/5 overflow-hidden mb-4">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&q=80"
+                 alt="Shell Jacket"
+                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-medium">Shell Jkt</h3>
+              <p class="text-white/40 text-sm">$1,200</p>
+            </div>
+            <button class="text-xs tracking-widest uppercase border-b border-white/30 hover:border-white transition-colors">
+              View
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="group">
+          <div class="aspect-[3/4] bg-white/5 overflow-hidden mb-4 relative">
+            <span class="absolute top-4 left-4 text-[10px] tracking-widest uppercase bg-white text-black px-3 py-1">
+              ACCESSORY
+            </span>
+            <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&q=80"
+                 alt="Obsidian Choker"
+                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-medium">Obsidian Choker</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="group">
+          <div class="aspect-[3/4] bg-white/5 overflow-hidden mb-4">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80"
+                 alt="Veil Dress"
+                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-medium">Veil Dress</h3>
+              <p class="text-white/40 text-sm">$890</p>
+            </div>
+            <button class="text-xs tracking-widest uppercase border-b border-white/30 hover:border-white transition-colors">
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <button class="px-12 py-4 border border-white/20 rounded-full text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all">
+          Shop All
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative pt-40 pb-12 px-6 bg-white text-black overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+        <div>
+          <h4 class="text-xs tracking-widest uppercase mb-4 font-medium">Editorials</h4>
+          <ul class="space-y-2 text-sm text-black/60">
+            <li><a href="#" class="hover:text-black transition-colors">Runway 24</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs tracking-widest uppercase mb-4 font-medium">Support</h4>
+          <ul class="space-y-2 text-sm text-black/60">
+            <li><a href="#" class="hover:text-black transition-colors">Shipping</a></li>
+            <li><a href="#" class="hover:text-black transition-colors">Returns</a></li>
+            <li><a href="#" class="hover:text-black transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs tracking-widest uppercase mb-4 font-medium">Social</h4>
+          <ul class="space-y-2 text-sm text-black/60">
+            <li><a href="#" class="hover:text-black transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-black transition-colors">TikTok</a></li>
+            <li><a href="#" class="hover:text-black transition-colors">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs tracking-widest uppercase mb-4 font-medium">Newsletter</h4>
+          <input type="email"
+                 placeholder="Email"
+                 class="w-full bg-transparent border-b border-black/30 py-2 text-sm focus:outline-none focus:border-black transition-colors">
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-black/10">
+        <div class="text-2xl font-mont font-black tracking-tighter uppercase mb-4 md:mb-0">
+          VELOUR
+        </div>
+        <div class="text-[10px] text-black/40 tracking-widest">
+          © 2024 Velour Inc. Designed by Caramell
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Custom Cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
+    });
+
+    // THREE.js Shader Background
+    const container = document.getElementById("shaderContainer");
+    const camera = new THREE.Camera();
+    camera.position.z = 1;
+    const scene = new THREE.Scene();
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const uniforms = {
+      time: { type: "f", value: 1.0 },
+      resolution: { type: "v2", value: new THREE.Vector2() }
+    };
+    const fragmentShader = `
+      #ifdef GL_ES
+      precision mediump float;
+      #endif
+      uniform float time;
+      uniform vec2 resolution;
+      float random(in vec2 _st) {
+        return fract(sin(dot(_st.xy, vec2(12.9898,78.233)))*43758.5453123);
+      }
+      float noise(in vec2 _st) {
+        vec2 i = floor(_st);
+        vec2 f = fract(_st);
+        float a = random(i);
+        float b = random(i + vec2(1.0, 0.0));
+        float c = random(i + vec2(0.0, 1.0));
+        float d = random(i + vec2(1.0, 1.0));
+        vec2 u = f * f * (3.0 - 2.0 * f);
+        return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+      }
+      void main() {
+        vec2 st = gl_FragCoord.xy/resolution.xy;
+        st.x *= resolution.x/resolution.y;
+        vec3 color = vec3(0.0);
+        vec2 pos = vec2(st*3.0);
+        float DF = 0.0;
+        float a = 0.0;
+        vec2 vel = vec2(time*.05);
+        DF += noise(pos+vel)*.25+.25;
+        a = noise(pos*vec2(cos(time*0.1),sin(time*0.1))*0.1)*3.1415;
+        vel = vec2(cos(a),sin(a));
+        DF += noise(pos+vel)*.25+.25;
+        color = vec3(DF);
+        color = mix(vec3(0.0), vec3(0.4), color);
+        gl_FragColor = vec4(color,1.0);
+      }
+    `;
+    const material = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: "void main() { gl_Position = vec4(position, 1.0); }",
+      fragmentShader: fragmentShader
+    });
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    container.appendChild(renderer.domElement);
+    function onWindowResize() {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      uniforms.resolution.value.x = window.innerWidth;
+      uniforms.resolution.value.y = window.innerHeight;
+    }
+    onWindowResize();
+    window.addEventListener("resize", onWindowResize);
+    function animate() {
+      requestAnimationFrame(animate);
+      uniforms.time.value += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    heroTl.to(".hero-subtitle", { y: 0, opacity: 1, duration: 1, delay: 0.5 })
+          .to(".hero-title", { y: 0, opacity: 1, duration: 1.2 }, "-=0.8")
+          .to(".hero-desc", { y: 0, opacity: 1, duration: 1 }, "-=0.8")
+          .to(".hero-btn", { y: 0, opacity: 1, duration: 0.8 }, "-=0.6");
+
+    // Horizontal Scroll
+    let runwayContainer = document.querySelector(".runway-container");
+    let panels = gsap.utils.toArray(".panel");
+    if(runwayContainer && panels.length > 0) {
+      gsap.to(panels, {
+        xPercent: -100 * (panels.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#runway",
+          pin: true,
+          scrub: 1,
+          snap: 1 / (panels.length - 1),
+          end: () => "+=" + runwayContainer.offsetWidth
+        }
+      });
+    }
+
+    // Collection items animation
+    gsap.utils.toArray("#collection .group").forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: "top 90%" },
+        y: 50, opacity: 0, duration: 1, ease: "power3.out", delay: i * 0.1
+      });
+    });
+  </script>
+</body>
+</html>
