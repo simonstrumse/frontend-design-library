@@ -8,7 +8,7 @@
  * consistent, high-quality frontend code.
  */
 
-import { DesignTokens, StyleName, allStyles } from '../tokens/design-tokens';
+import { StyleName, allStyles } from '../tokens/design-tokens';
 
 // ============================================================================
 // BASE SYSTEM PROMPT
@@ -105,7 +105,7 @@ ${getStyleGuidelines(styleName)}
 // ============================================================================
 
 function getStyleGuidelines(styleName: StyleName): string {
-  const guidelines: Record<StyleName, string> = {
+  const guidelines: Partial<Record<StyleName, string>> = {
     monochrome: `
 - Use only black (#000), white (#FFF), and gray (#525252) colors
 - Typography should be oversized and dramatic for headings
@@ -169,6 +169,288 @@ function getStyleGuidelines(styleName: StyleName): string {
 - Scanline or CRT effects optional
 - Status indicators and progress bars
 - Matrix/hacker aesthetic`,
+
+    bauhaus: `
+- Primary colors only: red, blue, yellow with black and white
+- Strong black borders (2-4px) on elements
+- Hard offset shadows with no blur
+- Bold, geometric sans-serif typography
+- Geometric shapes as design elements (circles, squares, triangles)
+- Grid-based layouts
+- No gradients - flat solid colors only
+- Minimal decoration, functional design`,
+
+    neumorphism: `
+- Soft, extruded 3D appearance
+- Dual shadows: light (white) and dark (gray) on opposite sides
+- Very soft, muted color palette
+- Rounded corners (12-24px)
+- Elements appear pushed out or inset into surface
+- Subtle monochromatic accent colors
+- Soft, clean sans-serif typography
+- Avoid high contrast - keep everything soft`,
+
+    luxury: `
+- Gold/champagne primary accent color
+- Sophisticated serif fonts for display text
+- Light, neutral backgrounds (cream, off-white)
+- Subtle shadows for elegant depth
+- Generous whitespace and padding
+- Thin, refined borders
+- Elegant transitions and animations
+- Premium, high-end aesthetic`,
+
+    artDeco: `
+- Gold accents on dark backgrounds
+- Geometric patterns (diamonds, chevrons, fans)
+- Art Deco inspired typography
+- Strong symmetry in layouts
+- Decorative borders and frames
+- Golden glow effects on key elements
+- 1920s vintage luxury aesthetic
+- Sharp geometric corners`,
+
+    web3: `
+- Orange/amber as primary accent on dark background
+- Glassmorphism overlays with blur
+- Grid patterns and tech overlays
+- Glowing accent colors
+- Modern sans-serif typography (Space Grotesk)
+- Crypto/blockchain inspired iconography
+- Dark, futuristic aesthetic
+- Gradient borders and glows`,
+
+    glassmorphism: `
+- Frosted glass effect with backdrop blur
+- Semi-transparent backgrounds
+- Soft, subtle borders (1px white/10%)
+- Layered depth through transparency
+- Clean, modern sans-serif typography
+- Soft shadows for floating effect
+- Dark background to enhance glass effect
+- Subtle gradient overlays`,
+
+    sketch: `
+- Hand-drawn, organic appearance
+- Slightly wobbly borders and lines
+- Casual, friendly typography (cursive/handwritten)
+- Neutral color palette with orange accents
+- Imperfect, human aesthetic
+- Simple offset shadows
+- Playful decorative elements
+- Paper-like backgrounds`,
+
+    industrial: `
+- Raw, utilitarian design
+- Bold condensed typography
+- Red and yellow warning-style accents
+- Exposed grid structures
+- Minimal border-radius
+- Muted earth tones
+- Factory/warehouse aesthetic
+- Functional, no-frills approach`,
+
+    organic: `
+- Nature-inspired green color palette
+- Flowing, curved shapes
+- Elegant serif typography
+- Soft, natural shadows
+- Rounded corners (24-48px)
+- Botanical or natural imagery
+- Warm, earthy accent colors
+- Wellness/eco-friendly aesthetic`,
+
+    maximalism: `
+- Bold, vibrant color combinations
+- Multiple colors used together
+- Dense, layered visual elements
+- Mixed typography styles
+- Colorful offset shadows
+- Patterns and textures
+- More is more aesthetic
+- High visual energy`,
+
+    retro: `
+- 70s/80s warm color palette (orange, brown, cream)
+- Rounded, friendly typography
+- Very rounded corners (24-32px)
+- Warm gradient backgrounds
+- Nostalgic, vintage aesthetic
+- Soft, warm shadows
+- Friendly, approachable feel
+- Retro-inspired patterns`,
+
+    vaporwave: `
+- Neon pink and cyan color scheme
+- Dark purple backgrounds
+- Retro-futuristic typography
+- Grid patterns and gradients
+- Glowing neon effects
+- 80s/90s digital aesthetic
+- Sunset gradient colors
+- Nostalgic cyber aesthetic`,
+
+    academia: `
+- Rich brown and cream color palette
+- Traditional serif typography
+- Scholarly, intellectual aesthetic
+- Minimal border-radius
+- Book-inspired design elements
+- Warm, aged paper backgrounds
+- Classic, timeless feel
+- Refined, educational tone`,
+
+    playfulGeometric: `
+- Bright primary colors (blue, red, yellow, green)
+- Bold geometric shapes
+- Colorful offset shadows
+- Rounded, friendly typography
+- Playful animations
+- Game-like aesthetic
+- Fun, energetic feel
+- Highly rounded corners`,
+
+    minimalDark: `
+- Ultra-minimal dark design
+- Subtle gray color variations
+- Maximum negative space
+- Clean sans-serif typography (Inter)
+- Subtle borders and shadows
+- Focus on content
+- Monochromatic with white accents
+- Refined, quiet aesthetic`,
+
+    professional: `
+- Navy blue corporate color scheme
+- Conservative, trustworthy design
+- Clean sans-serif typography (IBM Plex)
+- Ample whitespace
+- Subtle shadows for depth
+- Corporate, B2B aesthetic
+- Clear visual hierarchy
+- Professional, serious tone`,
+
+    botanical: `
+- Deep green color palette
+- Elegant serif typography
+- Floral/botanical accents
+- Yellow/gold accent colors
+- Soft, natural shadows
+- Garden/nature inspired
+- Refined, elegant aesthetic
+- Wellness/beauty tone`,
+
+    enterprise: `
+- Data-focused, dense layouts
+- Neutral color palette with indigo accents
+- Small, functional typography
+- Tight spacing
+- Information-dense design
+- Dashboard aesthetic
+- Functional components
+- Professional, serious tone`,
+
+    modernDark: `
+- Vibrant purple/pink accents on dark
+- Smooth gradients
+- Modern sans-serif typography
+- Rounded corners (12-24px)
+- Glowing accent shadows
+- Tech-forward aesthetic
+- Backdrop blur effects
+- Contemporary dark mode`,
+
+    newsprint: `
+- Black and white newspaper aesthetic
+- Serif headlines, serif body
+- Multi-column layouts
+- No border-radius
+- No shadows - flat design
+- Dense typography
+- Editorial, journalistic feel
+- Classic newspaper look`,
+
+    swissMinimalist: `
+- Black, white, and red only
+- Helvetica-style typography
+- Strong grid-based layouts
+- No border-radius
+- No shadows
+- Maximum clarity
+- International/Swiss style
+- Clean, minimal aesthetic`,
+
+    kinetic: `
+- High-energy color scheme (orange, yellow, green)
+- Bold, condensed typography
+- Motion-inspired layouts
+- Sharp corners or minimal radius
+- Dynamic, energetic feel
+- Sports/fitness aesthetic
+- Glowing accent shadows
+- Action-oriented design`,
+
+    flatDesign: `
+- Solid, flat colors (no gradients)
+- No shadows - completely flat
+- Simple geometric shapes
+- Clean sans-serif typography
+- Rounded corners (8-16px)
+- High contrast colors
+- Simple, clear aesthetic
+- 2D, icon-like elements`,
+
+    materialDesign: `
+- Google Material Design principles
+- Elevation through shadows
+- 8dp grid system
+- Motion and transitions
+- Vibrant primary colors
+- Rounded corners (4-28px)
+- Paper-like surfaces
+- Clear visual hierarchy`,
+
+    boldTypography: `
+- Typography as the hero element
+- Oversized headlines (96-192px)
+- High contrast weight combinations
+- Minimal decoration
+- Dark backgrounds
+- Maximum impact through type
+- Condensed/compressed fonts
+- Dramatic, statement-making`,
+
+    caramell: `
+- Warm caramel/brown color palette
+- Cream backgrounds
+- Mixed serif/sans typography
+- Rounded corners (12-24px)
+- Glassmorphism navigation
+- Soft, subtle shadows
+- Warm, friendly aesthetic
+- Modern SaaS feel`,
+
+    aura: `
+- Minimal dark-first design
+- Subtle gray variations
+- shadcn/ui compatible HSL colors
+- Layered soft shadows
+- Clean Inter typography
+- Elegant transitions
+- Refined, quiet aesthetic
+- Modern component library feel`,
+
+    wiseDesign: `
+- Bright green (#9FE870) as primary brand color
+- Forest green (#163300) for interactive elements
+- Clean white backgrounds
+- Inter for functional text, Wise Sans for display
+- Clear accessible color contrast
+- Rounded corners (8-24px)
+- Subtle, professional shadows
+- Trust indicators and clear CTAs
+- Fintech/financial services aesthetic
+- Global, accessible design language`,
   };
 
   return guidelines[styleName] || '';

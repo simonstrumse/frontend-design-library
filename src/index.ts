@@ -53,11 +53,12 @@ export {
   luxury,
   artDeco,
   web3,
+  wiseDesign,
 
   // Collections
   allStyles,
   styleMetadata,
-  additionalStyles,
+  styleCategories,
 } from './tokens/design-tokens';
 
 // ============================================================================
@@ -134,10 +135,19 @@ export {
   // Template collection
   templates,
 
+  // Individual templates
+  dexoMediaTemplate,
+  velourFashionTemplate,
+  lowkeyCoffeeTemplate,
+  wiseTransferTemplate,
+
   // Template helpers
   getTemplatesByStyle,
   getTemplatesBySource,
+  getTemplatesByCategory,
   getSectionExamples,
+  getTemplateByName,
+  listTemplates,
 } from './templates';
 
 // ============================================================================

@@ -944,6 +944,50 @@ export const allStyles: Record<string, DesignTokens> = {
     shadows: ['rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -0.5px'],
     effects: { backdrop: 'blur(24px)' },
   },
+  wiseDesign: {
+    name: 'Wise Design',
+    description: 'Clean, modern fintech design from Wise (formerly TransferWise). Features vibrant bright green as primary brand color, neutral content grays with green tints, Inter for functional typography and Wise Sans for expressive display. Built for clarity, accessibility, and global reach.',
+    mode: 'light',
+    type: 'sans',
+    colors: {
+      primary: '#9FE870',
+      secondary: '#163300',
+      accent: '#FFC091',
+      background: '#FFFFFF',
+      foreground: '#0E0F0C',
+      muted: '#454745',
+      border: 'rgba(14, 15, 12, 0.12)',
+      card: '#FFFFFF',
+      contentTertiary: '#6A6C6A',
+      interactiveAccent: '#9FE870',
+      interactivePrimary: '#163300',
+      backgroundNeutral: 'rgba(22, 51, 0, 0.08)',
+      sentimentPositive: '#2F5711',
+      sentimentNegative: '#A8200D',
+      sentimentWarning: '#EDC843',
+      brightYellow: '#FFEB69',
+      brightBlue: '#A0E1E1',
+      brightPink: '#FFD7EF',
+      darkPurple: '#260A2F',
+      darkCharcoal: '#21231D',
+    },
+    typography: {
+      fontFamily: {
+        display: '"Wise Sans", ui-sans-serif, system-ui, sans-serif',
+        body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+        mono: '"JetBrains Mono", "Fira Code", monospace',
+      },
+      fontSizes: ['14px', '16px', '20px', '26px', '30px', '40px', '64px', '96px'],
+      fontWeights: [400, 500, 600, 700],
+    },
+    spacing: { base: 4, scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128] },
+    borderRadius: ['4px', '8px', '12px', '16px', '24px', '9999px'],
+    shadows: [
+      'rgba(0, 0, 0, 0.04) 0px 1px 2px 0px',
+      'rgba(0, 0, 0, 0.08) 0px 2px 8px 0px',
+      'rgba(0, 0, 0, 0.12) 0px 4px 16px 0px',
+    ],
+  },
 };
 
 export const styleMetadata: StyleMetadata[] = [
@@ -980,6 +1024,7 @@ export const styleMetadata: StyleMetadata[] = [
   { id: 'boldTypography', name: 'Bold Typography', mode: 'dark', type: 'sans', category: 'Editorial' },
   { id: 'caramell', name: 'Caramell', mode: 'light', type: 'sans', category: 'SaaS', source: 'caramell.app' },
   { id: 'aura', name: 'Aura', mode: 'dark', type: 'sans', category: 'Modern', source: 'aura.build' },
+  { id: 'wiseDesign', name: 'Wise Design', mode: 'light', type: 'sans', category: 'Fintech', source: 'wise.design' },
 ];
 
 export const styleCategories = {
@@ -999,6 +1044,7 @@ export const styleCategories = {
   Natural: ['organic', 'botanical'],
   Minimal: ['minimalDark', 'swissMinimalist'],
   SaaS: ['caramell'],
+  Fintech: ['wiseDesign'],
 };
 
 export function getStyleById(id: string): DesignTokens | undefined {

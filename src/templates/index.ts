@@ -13,8 +13,9 @@
  * - Responsive design patterns
  */
 
-import { readFileSync } from 'fs';
-import { join } from 'path';
+// Reserved for future file-based template loading
+// import { readFileSync } from 'fs';
+// import { join } from 'path';
 
 // ============================================================================
 // TEMPLATE TYPES
@@ -602,6 +603,406 @@ export const lowkeyCoffeeTemplate: LandingPageTemplate = {
   ],
 };
 
+/**
+ * Wise Transfer - Fintech Landing Page Template
+ *
+ * Clean, accessible fintech template inspired by Wise design system.
+ * Features bright green accents, clear CTAs, trust indicators,
+ * and a focus on money transfers and global payments.
+ */
+export const wiseTransferTemplate: LandingPageTemplate = {
+  name: 'Wise Transfer',
+  description: 'Clean fintech landing page template inspired by Wise design system. Features bright green accents, trust indicators, currency converter, and accessible typography.',
+  source: 'custom',
+  style: 'wiseDesign',
+  category: 'saas',
+  features: [
+    'Bright green brand color palette',
+    'Currency converter component',
+    'Trust indicators and stats',
+    'Clean Inter typography',
+    'Accessible color contrast',
+    'Multi-column feature grid',
+    'Testimonials with avatar',
+    'Mobile-first responsive design',
+  ],
+  fonts: ['Inter', 'Wise Sans'],
+  tailwindConfig: {
+    colors: {
+      'wise-green': '#9FE870',
+      'wise-forest': '#163300',
+      'wise-bg': '#FFFFFF',
+      'wise-text': '#0E0F0C',
+      'wise-muted': '#454745',
+      'wise-border': 'rgba(14, 15, 12, 0.12)',
+      'wise-orange': '#FFC091',
+      'wise-yellow': '#FFEB69',
+      'wise-blue': '#A0E1E1',
+      'wise-pink': '#FFD7EF',
+    },
+    fontFamily: {
+      display: ['Wise Sans', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
+    },
+  },
+  cssVariables: {
+    '--background': '#FFFFFF',
+    '--foreground': '#0E0F0C',
+    '--primary': '#9FE870',
+    '--secondary': '#163300',
+    '--accent': '#FFC091',
+    '--muted': '#454745',
+    '--border': 'rgba(14, 15, 12, 0.12)',
+  },
+  sections: [
+    {
+      name: 'navigation',
+      description: 'Clean navigation with logo, links, and login/signup buttons',
+      html: `<nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm border-b border-wise-border z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-12">
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-wise-green rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-wise-forest" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="text-xl font-semibold text-wise-text">Wise</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-wise-muted">
+          <a href="#" class="hover:text-wise-forest transition-colors">Personal</a>
+          <a href="#" class="hover:text-wise-forest transition-colors">Business</a>
+          <a href="#" class="hover:text-wise-forest transition-colors">Pricing</a>
+          <a href="#" class="hover:text-wise-forest transition-colors">Help</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-sm font-medium text-wise-forest hover:underline">Log in</a>
+        <a href="#" class="px-5 py-2.5 bg-wise-green text-wise-forest font-semibold rounded-full hover:bg-wise-green/90 transition-colors text-sm">
+          Register
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>`,
+    },
+    {
+      name: 'hero',
+      description: 'Hero section with headline, currency converter, and trust badges',
+      html: `<section class="pt-32 pb-20 px-4 bg-gradient-to-b from-wise-green/10 to-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-wise-text leading-tight mb-6">
+          Money without <span class="text-wise-forest">borders</span>
+        </h1>
+        <p class="text-xl text-wise-muted mb-8 max-w-xl">
+          Send money abroad 8x cheaper than banks. Join 16 million people who save when they send, spend, and receive.
+        </p>
+        <div class="flex flex-wrap gap-6 mb-10">
+          <div class="flex items-center gap-2 text-sm text-wise-muted">
+            <svg class="w-5 h-5 text-wise-forest" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Low, upfront fees</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-wise-muted">
+            <svg class="w-5 h-5 text-wise-forest" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Fast delivery</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-wise-muted">
+            <svg class="w-5 h-5 text-wise-forest" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Real exchange rate</span>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg border border-wise-border p-8">
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-wise-muted mb-2">You send</label>
+            <div class="flex items-center gap-4 p-4 border border-wise-border rounded-xl">
+              <input type="text" value="1,000.00" class="flex-1 text-2xl font-semibold text-wise-text bg-transparent outline-none">
+              <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm font-medium">
+                <span class="w-6 h-6 bg-blue-500 rounded-full"></span>
+                EUR
+              </button>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 text-sm text-wise-muted">
+            <span>= 0.855 · Mid-market rate</span>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-wise-muted mb-2">Recipient gets</label>
+            <div class="flex items-center gap-4 p-4 border border-wise-border rounded-xl bg-wise-green/10">
+              <input type="text" value="855.00" class="flex-1 text-2xl font-semibold text-wise-forest bg-transparent outline-none" readonly>
+              <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm font-medium">
+                <span class="w-6 h-6 bg-red-500 rounded-full"></span>
+                GBP
+              </button>
+            </div>
+          </div>
+          <button class="w-full py-4 bg-wise-green text-wise-forest font-bold rounded-full text-lg hover:bg-wise-green/90 transition-colors">
+            Get started
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`,
+    },
+    {
+      name: 'stats',
+      description: 'Trust indicators showing key metrics',
+      html: `<section class="py-16 px-4 border-y border-wise-border bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="text-4xl font-bold text-wise-forest mb-2">16M+</div>
+        <div class="text-sm text-wise-muted">Customers worldwide</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-wise-forest mb-2">70+</div>
+        <div class="text-sm text-wise-muted">Countries supported</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-wise-forest mb-2">£9B</div>
+        <div class="text-sm text-wise-muted">Processed monthly</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-wise-forest mb-2">8x</div>
+        <div class="text-sm text-wise-muted">Cheaper than banks</div>
+      </div>
+    </div>
+  </div>
+</section>`,
+    },
+    {
+      name: 'features',
+      description: 'Feature cards with icons highlighting key benefits',
+      html: `<section class="py-24 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-wise-text mb-4">Why people choose Wise</h2>
+      <p class="text-xl text-wise-muted max-w-2xl mx-auto">
+        We're building the best way to move money around the world
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-2xl border border-wise-border hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 bg-wise-green/20 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-wise-forest" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-wise-text mb-3">Real exchange rate</h3>
+        <p class="text-wise-muted">
+          We use the mid-market rate — the one you find on Google. No markup, no hidden fees.
+        </p>
+      </div>
+      <div class="p-8 rounded-2xl border border-wise-border hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 bg-wise-yellow/30 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-wise-forest" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-wise-text mb-3">Lightning fast</h3>
+        <p class="text-wise-muted">
+          Most transfers arrive instantly. Some take 1-2 working days depending on your destination.
+        </p>
+      </div>
+      <div class="p-8 rounded-2xl border border-wise-border hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 bg-wise-blue/30 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-wise-forest" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-wise-text mb-3">Secure & regulated</h3>
+        <p class="text-wise-muted">
+          We're regulated by the FCA and other authorities. Your money is safe with us.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>`,
+    },
+    {
+      name: 'howItWorks',
+      description: 'Step-by-step guide showing how the service works',
+      html: `<section class="py-24 px-4 bg-wise-green/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-wise-text mb-4">How Wise works</h2>
+      <p class="text-xl text-wise-muted">Send money in 3 simple steps</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-wise-green text-wise-forest rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+        <h3 class="text-xl font-bold text-wise-text mb-3">Sign up for free</h3>
+        <p class="text-wise-muted">Create your account in minutes. It's free to join and there are no monthly fees.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-wise-green text-wise-forest rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+        <h3 class="text-xl font-bold text-wise-text mb-3">Add recipient details</h3>
+        <p class="text-wise-muted">Enter who you're sending money to, and how much you want to send.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-wise-green text-wise-forest rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+        <h3 class="text-xl font-bold text-wise-text mb-3">Pay and track</h3>
+        <p class="text-wise-muted">Pay by bank transfer, card, or other methods. Track your transfer in real-time.</p>
+      </div>
+    </div>
+  </div>
+</section>`,
+    },
+    {
+      name: 'testimonials',
+      description: 'Customer testimonials with ratings',
+      html: `<section class="py-24 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-wise-text mb-4">Loved by millions</h2>
+      <div class="flex items-center justify-center gap-2 text-wise-muted">
+        <span class="text-wise-green text-2xl">★★★★★</span>
+        <span>4.6 out of 5 based on 180,000+ reviews</span>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 bg-gray-50 rounded-2xl">
+        <div class="flex gap-1 text-wise-green mb-4">★★★★★</div>
+        <p class="text-wise-text mb-6">
+          "I've been using Wise for 3 years now. The rates are always fair and transfers are super fast. Saved me hundreds compared to my bank!"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-wise-orange rounded-full"></div>
+          <div>
+            <div class="font-semibold text-wise-text">Sarah M.</div>
+            <div class="text-sm text-wise-muted">London, UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-8 bg-gray-50 rounded-2xl">
+        <div class="flex gap-1 text-wise-green mb-4">★★★★★</div>
+        <p class="text-wise-text mb-6">
+          "As a freelancer working with international clients, Wise is a lifesaver. No more crazy bank fees eating into my earnings."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-wise-blue rounded-full"></div>
+          <div>
+            <div class="font-semibold text-wise-text">Miguel R.</div>
+            <div class="text-sm text-wise-muted">Barcelona, Spain</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-8 bg-gray-50 rounded-2xl">
+        <div class="flex gap-1 text-wise-green mb-4">★★★★★</div>
+        <p class="text-wise-text mb-6">
+          "The app is so easy to use, and I love that I can see exactly how much my recipient will get before I send."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-wise-pink rounded-full"></div>
+          <div>
+            <div class="font-semibold text-wise-text">Priya K.</div>
+            <div class="text-sm text-wise-muted">Mumbai, India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`,
+    },
+    {
+      name: 'cta',
+      description: 'Large call-to-action section with app download',
+      html: `<section class="py-24 px-4 bg-wise-forest text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to save on transfers?</h2>
+    <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+      Join 16 million people who send money smarter. Sign up in minutes.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="inline-flex items-center justify-center px-8 py-4 bg-wise-green text-wise-forest font-bold rounded-full text-lg hover:bg-white transition-colors">
+        Open a free account
+      </a>
+      <a href="#" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-bold rounded-full text-lg hover:bg-white/10 transition-colors">
+        Download the app
+      </a>
+    </div>
+    <p class="mt-8 text-sm text-white/60">
+      Free to sign up. No monthly fees. Cancel anytime.
+    </p>
+  </div>
+</section>`,
+    },
+    {
+      name: 'footer',
+      description: 'Multi-column footer with links and regulatory information',
+      html: `<footer class="py-16 px-4 bg-white border-t border-wise-border">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 bg-wise-green rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-wise-forest" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="text-xl font-semibold text-wise-text">Wise</span>
+        </div>
+        <p class="text-sm text-wise-muted">Money without borders</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-wise-text mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-wise-muted">
+          <li><a href="#" class="hover:text-wise-forest">About us</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Careers</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Press</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-wise-text mb-4">Products</h4>
+        <ul class="space-y-2 text-sm text-wise-muted">
+          <li><a href="#" class="hover:text-wise-forest">Send money</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Wise Account</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Wise Card</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Business</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-wise-text mb-4">Resources</h4>
+        <ul class="space-y-2 text-sm text-wise-muted">
+          <li><a href="#" class="hover:text-wise-forest">Help Centre</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Currency converter</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Compare rates</a></li>
+          <li><a href="#" class="hover:text-wise-forest">API</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-wise-text mb-4">Legal</h4>
+        <ul class="space-y-2 text-sm text-wise-muted">
+          <li><a href="#" class="hover:text-wise-forest">Privacy policy</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Terms of use</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Cookie policy</a></li>
+          <li><a href="#" class="hover:text-wise-forest">Complaints</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-wise-border">
+      <p class="text-xs text-wise-muted">
+        © Wise Payments Limited 2024. Wise is authorised by the Financial Conduct Authority under the Electronic Money Regulations 2011 for the issuing of electronic money.
+      </p>
+    </div>
+  </div>
+</footer>`,
+    },
+  ],
+};
+
 // ============================================================================
 // TEMPLATE COLLECTION
 // ============================================================================
@@ -610,6 +1011,7 @@ export const templates: LandingPageTemplate[] = [
   dexoMediaTemplate,
   velourFashionTemplate,
   lowkeyCoffeeTemplate,
+  wiseTransferTemplate,
 ];
 
 // ============================================================================

@@ -332,7 +332,8 @@ export const cssVariablePresets = {
  * Generate style-specific utility classes
  */
 export function generateUtilityClasses(styleName: StyleName): string {
-  const tokens = allStyles[styleName];
+  const _tokens = allStyles[styleName]; // Reserved for future per-style utilities
+  void _tokens;
   const lines: string[] = [];
 
   // Style-specific utilities

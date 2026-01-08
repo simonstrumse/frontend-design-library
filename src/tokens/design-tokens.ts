@@ -1332,6 +1332,62 @@ export const aura: DesignTokens = {
 };
 
 // ============================================================================
+// WISE DESIGN STYLE (from wise.design)
+// ============================================================================
+
+export const wiseDesign: DesignTokens = {
+  name: 'Wise Design',
+  description: 'Clean, modern fintech design from Wise (formerly TransferWise). Features vibrant bright green as primary brand color, neutral content grays with green tints, Inter for functional typography and Wise Sans for expressive display. Built for clarity, accessibility, and global reach.',
+  mode: 'light',
+  type: 'sans',
+  colors: {
+    primary: '#9FE870', // Bright Green - main brand color
+    secondary: '#163300', // Forest Green - interactive/link color
+    accent: '#FFC091', // Bright Orange - secondary accent
+    background: '#FFFFFF', // Background Screen
+    foreground: '#0E0F0C', // Content Primary
+    muted: '#454745', // Content Secondary
+    border: 'rgba(14, 15, 12, 0.12)', // Border Neutral (12% opacity)
+    card: '#FFFFFF', // Background Elevated
+    // Wise-specific semantic colors
+    contentTertiary: '#6A6C6A',
+    interactiveAccent: '#9FE870',
+    interactivePrimary: '#163300',
+    backgroundNeutral: 'rgba(22, 51, 0, 0.08)', // 8% opacity green tint
+    // Sentiment colors
+    sentimentPositive: '#2F5711',
+    sentimentNegative: '#A8200D',
+    sentimentWarning: '#EDC843',
+    // Secondary palette
+    brightYellow: '#FFEB69',
+    brightBlue: '#A0E1E1',
+    brightPink: '#FFD7EF',
+    darkPurple: '#260A2F',
+    darkCharcoal: '#21231D',
+  },
+  typography: {
+    fontFamily: {
+      display: '"Wise Sans", ui-sans-serif, system-ui, sans-serif',
+      body: 'Inter, ui-sans-serif, system-ui, sans-serif',
+      mono: '"JetBrains Mono", "Fira Code", monospace',
+    },
+    // Wise typography scale from product and marketing styles
+    fontSizes: ['14px', '16px', '20px', '26px', '30px', '40px', '64px', '96px'],
+    fontWeights: [400, 500, 600, 700],
+  },
+  spacing: {
+    base: 4,
+    scale: [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+  },
+  borderRadius: ['4px', '8px', '12px', '16px', '24px', '9999px'],
+  shadows: [
+    'rgba(0, 0, 0, 0.04) 0px 1px 2px 0px',
+    'rgba(0, 0, 0, 0.08) 0px 2px 8px 0px',
+    'rgba(0, 0, 0, 0.12) 0px 4px 16px 0px',
+  ],
+};
+
+// ============================================================================
 // ALL STYLES COLLECTION
 // ============================================================================
 
@@ -1369,6 +1425,7 @@ export const allStyles = {
   boldTypography,
   caramell,
   aura,
+  wiseDesign,
 } as const;
 
 export type StyleName = keyof typeof allStyles;
@@ -1414,6 +1471,7 @@ export const styleMetadata = [
   // External sources
   { id: 'caramell', name: 'Caramell', mode: 'light', type: 'sans', category: 'SaaS', source: 'caramell.app' },
   { id: 'aura', name: 'Aura', mode: 'dark', type: 'sans', category: 'Modern', source: 'aura.build' },
+  { id: 'wiseDesign', name: 'Wise Design', mode: 'light', type: 'sans', category: 'Fintech', source: 'wise.design' },
 ] as const;
 
 // ============================================================================
@@ -1437,6 +1495,7 @@ export const styleCategories = {
   Natural: ['organic', 'botanical'],
   Minimal: ['minimalDark', 'swissMinimalist'],
   SaaS: ['caramell'],
+  Fintech: ['wiseDesign'],
 } as const;
 
 export default allStyles;
